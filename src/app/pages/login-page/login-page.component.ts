@@ -27,7 +27,7 @@ public googleLogin(userInfo) {
 
 
 public onSignIn(googleUser) {
-   var user : User = new User();
+   var user : user = new User();
 
       ((u, p) => {
          u.id            = p.getId();
