@@ -2,9 +2,10 @@
     <div class="logo-container" fxFlexAlign="center">
         <app-logo></app-logo>
     </div>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <mat-card fxFlexAlign="center">
         <mat-card-title>
-            Login to MatFortyTwo
+            Login to check tables
         </mat-card-title>
         <mat-card-content>
             <form (keyup.enter)="login(email, password)">
@@ -22,7 +23,7 @@
                     class="login-field" (click)="login(email, password)" type="submit">
                 Login
             </button>
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            
         </mat-card-actions>
     </mat-card>
 </div>
