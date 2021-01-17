@@ -24,16 +24,7 @@ export class LoginPageComponent implements OnInit {
 public googleLogin(userInfo) {
     console.log(userInfo)
 }
-ngAfterViewInit() {
-   gapi.signin2.render('my-signin2', {
-      'scope': 'profile email',
-      'width': 240,
-      'height': 50,
-      'longtitle': true,
-      'theme': 'light',
-      'onsuccess': param => this.onSignIn(param)
-  });
-}
+
 
 public onSignIn(googleUser) {
    var user : User = new User();
