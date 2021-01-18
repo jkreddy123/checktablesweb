@@ -45,7 +45,8 @@ public googleLogin(userInfo) {
 
 public onSignIn(googleUser) {
    //var user : user = new User();
-  console.log(googleUser.getAuthResponse());
+    var p : p = googleUser.getBasicProfile();
+  console.log(p.getEmail(),p.getImageUrl());
     //  ((u, p) => {
     //     u.id            = p.getId();
     //     u.name          = p.getName();
@@ -61,6 +62,7 @@ public onSignIn(googleUser) {
 
       //user.save();
       //this.goHome();
+    this.navigateTo('/app-login-page');
 };
     public async login(email: string, password: string) {
         try {
