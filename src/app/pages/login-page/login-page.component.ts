@@ -16,7 +16,7 @@ export class LoginPageComponent implements OnInit {
 
     ngOnInit() {
         this.errorMessage = '';
-        (window as any).googleLogin = this.googleLogin
+        (window as any).onSignIn = this.onSignIn
         if (this.authService.isLogged()) {
             this.navigateTo();
         }
