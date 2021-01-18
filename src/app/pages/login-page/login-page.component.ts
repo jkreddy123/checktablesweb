@@ -7,11 +7,12 @@ import { Router } from '@angular/router';
     templateUrl: './login-page.component.html',
     styleUrls: ['./login-page.component.scss'],
 })
+declare var gapi: any;
+
 export class LoginPageComponent implements OnInit {
     email: string;
     password: string;
     errorMessage: string;
-    declare var gapi: any;
 
     constructor(private authService: AuthService, private router: Router) {}
 
