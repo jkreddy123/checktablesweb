@@ -11,6 +11,7 @@ export class LoginPageComponent implements OnInit {
     email: string;
     password: string;
     errorMessage: string;
+    declare var gapi: any;
 
     constructor(private authService: AuthService, private router: Router) {}
 
@@ -22,7 +23,7 @@ export class LoginPageComponent implements OnInit {
         }
     }
     
-     declare var gapi: any;
+
 
 ngAfterViewInit() {
    gapi.signin2.render('my-signin2', {
