@@ -16,11 +16,25 @@ export class LoginPageComponent implements OnInit {
 
     ngOnInit() {
         this.errorMessage = '';
-        (window as any).onSignIn = this.onSignIn
+        (window as any).googleLogin = this.googleLogin
         if (this.authService.isLogged()) {
             this.navigateTo();
         }
     }
+    
+     declare var gapi: any;
+
+ngAfterViewInit() {
+   gapi.signin2.render('my-signin2', {
+      'scope': 'profile email',
+      'width': 240,
+      'height': 50,
+      'longtitle': true,
+      'theme': 'light',
+      'onsuccess': param => this.onSignIn(param)
+  });
+}
+
 public googleLogin(userInfo) {
     console.log(userInfo)
 }
@@ -28,19 +42,19 @@ public googleLogin(userInfo) {
 
 public onSignIn(googleUser) {
    //var user : user = new User();
-   console.log(googleUser.getBasicProfile());
-      //((u, p) => {
-        // u.id            = p.getId();
-      //   u.name          = p.getName();
-      //   u.email         = p.getEmail();
-      //   u.imageUrl      = p.getImageUrl();
-      //   u.givenName     = p.getGivenName();
-      //   u.familyName    = p.getFamilyName();
-      //})(user, googleUser.getBasicProfile());
+  console.log(googleUser.getAuthResponse());
+    //  ((u, p) => {
+    //     u.id            = p.getId();
+    //     u.name          = p.getName();
+    //     u.email         = p.getEmail();
+    //     u.imageUrl      = p.getImageUrl();
+    //     u.givenName     = p.getGivenName();
+    //     u.familyName    = p.getFamilyName();
+    //  })(user, googleUser.getBasicProfile());
 
-      //((u, r) => {
-      //   u.token         = r.id_token;
-      //})(user, googleUser.getAuthResponse());
+     // ((u, r) => {
+     //    u.token         = r.id_token;
+     // })(user, googleUser.getAuthResponse());
 
       //user.save();
       //this.goHome();
