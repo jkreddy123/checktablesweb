@@ -11,6 +11,7 @@ export class HomePageComponent implements OnInit {
 
     ngOnInit() {}
     public async advanceconversation() {
+        console.log("advanceconversation click");
       js_advanceconversation();
     }
 }
