@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 import { Router } from '@angular/router';
 declare var gapi: any;
-
+declar function usersignedin(): any;
 @Component({
     selector: 'app-login-page',
     templateUrl: './login-page.component.html',
@@ -70,26 +70,7 @@ public onSignIn(googleUser) {
 };
     
 
-    var usersignedin = function(profile) {
-    const url = "https://us-central1-mlkaggle-288509.cloudfunctions.net/usersignedin"
-    userdata = {
-        "ID": profile.getId(),
-        "Name": profile.getName(),
-        "ImageURL": profile.getImageUrl(),
-        "Email": profile.getEmail()
-    };
-     const otherparam={
-        headers:{
-           "content-type":"application/json",
-        },
-        body:JSON.stringify(userdata),
-        method:"POST"
-     };
-    fetch(url,otherparam)
-    .then(data=>{console.log(data)})
-    .then(res=>{console.log(res);})
-    .catch(error=>{console.log(error);})
-  };
+
 
     public async login(email: string, password: string) {
         try {
