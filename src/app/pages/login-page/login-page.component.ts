@@ -62,7 +62,7 @@ public onSignIn(googleUser) {
 
       //user.save();
       //this.goHome();
-    this.navigateTo('');
+    this.navigateTo('home');
 };
     public async login(email: string, password: string) {
         try {
