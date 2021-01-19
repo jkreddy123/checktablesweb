@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 import { Router } from '@angular/router';
 declare var gapi: any;
-declare function usersignedin: any;
+declare function usersignedin(profile: any): any;
+
 @Component({
     selector: 'app-login-page',
     templateUrl: './login-page.component.html',
