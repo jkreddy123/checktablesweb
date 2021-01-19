@@ -46,7 +46,7 @@ public googleLogin(userInfo) {
 public onSignIn(googleUser) {
    //var user : user = new User();
     var p = googleUser.getBasicProfile();
-    var user;
+    var user:any = {};
   console.log(p.getEmail(),p.getImageUrl());
       ((u, p) => {
          u.id            = p.getId();
