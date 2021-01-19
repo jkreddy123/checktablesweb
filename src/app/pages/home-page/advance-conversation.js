@@ -4,7 +4,7 @@
     var userdata;
     message.textContent = 'Passive';
 
-    document.getElementById('audio-control').onclick = function () {
+    var js_advanceconversation = function () {
 
         //AWS.config.credentials = new AWS.Credentials(document.getElementById('ACCESS_ID').value, document.getElementById('SECRET_KEY').value, null);
         //AWS.config.region = 'us-east-1';
