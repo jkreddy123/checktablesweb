@@ -31,7 +31,9 @@
                 "src/theme.scss",
                 "src/app/core/styles/nav-styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+               "src/app/pages/login-page/GCPuserLoginfunctionAPI.js"
+            ],
 
           },
           "configurations": {
