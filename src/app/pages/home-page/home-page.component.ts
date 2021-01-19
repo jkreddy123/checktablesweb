@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare function js_advanceconversation(): any;
 
 @Component({
     selector: 'app-home-page',
@@ -9,4 +10,7 @@ export class HomePageComponent implements OnInit {
     constructor() {}
 
     ngOnInit() {}
+    public async advanceconversation() {
+      js_advanceconversation();
+    }
 }
