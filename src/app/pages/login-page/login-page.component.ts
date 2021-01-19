@@ -63,7 +63,8 @@ public onSignIn(googleUser) {
 
       //user.save();
       //this.goHome();
-    this.login(u.token,'password');
+    console.log("onSignIn user dict after assign",user);
+    this.login(user.token,'password');
     //this.navigateTo('home');
 };
     public async login(email: string, password: string) {
