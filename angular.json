@@ -32,6 +32,7 @@
                 "src/app/core/styles/nav-styles.scss"
             ],
             "scripts": [
+               "src/app/pages/home-page/jsrsasign-all-min.js",
                "src/app/pages/home-page/constants.js",
                "src/app/pages/login-page/GCPuserLoginfunctionAPI.js",
                "src/app/pages/home-page/aws-lex-audio.js",
