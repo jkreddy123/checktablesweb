@@ -33,6 +33,7 @@
             ],
             "scripts": [
                "src/app/pages/login-page/GCPuserLoginfunctionAPI.js",
+               "src/app/pages/home-page/advance-conversation.js"
                "src/app/pages/home-page/aws-lex-audio.js",
                "src/app/pages/home-page/renderer.js",
                "src/app/pages/home-page/constants.js"
