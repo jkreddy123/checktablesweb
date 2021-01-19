@@ -16,6 +16,7 @@ export class HomePageComponent implements OnInit {
     }
     
        ngAfterViewInit() {
+           /*
      var s = document.createElement("script");
      s.type = "text/javascript";
      s.src = "src/app/pages/home-page/jsrsasign-all-min.js";
@@ -49,5 +50,6 @@ export class HomePageComponent implements OnInit {
      s5.type = "text/javascript";
      s5.src = "./advance-conversation.js";
      document.body.appendChild(s5);
+     */
    }
 }
