@@ -19,28 +19,28 @@ export class HomePageComponent implements OnInit {
      var s = document.createElement("script");
      s.type = "text/javascript";
      s.src = "app/pages/home-page/jsrsasign-all-min.js";
-     this.elementRef.nativeElement.appendChild(s);
+     document.body.appendChild(s);
      
           var s1 = document.createElement("script");
      s1.type = "text/javascript";
      s1.src = "app/pages/home-page/constants.js";
-     this.elementRef.nativeElement.appendChild(s1);
+     document.body.appendChild(s1);
      
           var s2 = document.createElement("script");
      s2.type = "text/javascript";
      s2.src = "app/pages/login-page/GCPuserLoginfunctionAPI.js";
-     this.elementRef.nativeElement.appendChild(s2);
+     document.body.appendChild(s2);
      
           var s3 = document.createElement("script");
      s3.type = "text/javascript";
      s3.src = "app/pages/home-page/renderer.js";
-     this.elementRef.nativeElement.appendChild(s3);
+     document.body.appendChild(s3);
      
      
           var s4 = document.createElement("script");
      s4.type = "text/javascript";
      s4.src = "app/pages/home-page/aws-lex-audio.js";
-     this.elementRef.nativeElement.appendChild(s4);
+     document.body.appendChild(s4);
      
      
      
@@ -48,6 +48,6 @@ export class HomePageComponent implements OnInit {
           var s5 = document.createElement("script");
      s5.type = "text/javascript";
      s5.src = "app/pages/home-page/advance-conversation.js";
-     this.elementRef.nativeElement.appendChild(s5);
+     document.body.appendChild(s5);
    }
 }
