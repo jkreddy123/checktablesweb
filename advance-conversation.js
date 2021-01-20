@@ -1,4 +1,4 @@
-    varvar waveform = window.Waveform();
+    var waveform = window.Waveform();
     var message = document.getElementById('message');
     var config, conversation;
     var userdata;
