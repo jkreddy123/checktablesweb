@@ -4,7 +4,7 @@
     var userdata;
     message.textContent = 'Passive';
 
-    function js_advanceconversation() {
+    function js_advanceconversation(userdata) {
     console.log("inside advance conversation js");
         //AWS.config.credentials = new AWS.Credentials(document.getElementById('ACCESS_ID').value, document.getElementById('SECRET_KEY').value, null);
         //AWS.config.region = 'us-east-1';
