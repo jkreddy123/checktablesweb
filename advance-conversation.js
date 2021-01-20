@@ -1,10 +1,10 @@
-
-    export default function js_advanceconversation() {
     var waveform = window.Waveform();
     var message = document.getElementById('message');
     var config, conversation;
     var userdata;
     message.textContent = 'Passive';
+
+    function js_advanceconversation() {
     console.log("inside advance conversation js");
         //AWS.config.credentials = new AWS.Credentials(document.getElementById('ACCESS_ID').value, document.getElementById('SECRET_KEY').value, null);
         //AWS.config.region = 'us-east-1';
