@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  var canvas = document.querySelector('.visualizer');
+  var canvas = document.getElementsById('canvasvisualizer');//querySelector('.visualizer');
   var canvasCtx = canvas.getContext('2d');
   var listening = true;
 
