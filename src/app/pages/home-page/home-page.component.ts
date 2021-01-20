@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-declare function js_advanceconversation(): any;
+import { Component, OnInit ,AfterViewInit,ElementRef} from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Inject } from '@angular/core'; 
+import { UserobjectserviceService } from "src/app/userobjectservice.service";
+declare function js_advanceconversation(profile: any): any;
 
 @Component({
     selector: 'app-home-page',
@@ -7,15 +10,16 @@ declare function js_advanceconversation(): any;
     styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
-    constructor() {}
+    constructor(@Inject(DOCUMENT) private document, private elementRef: ElementRef,private UserobjectserviceService: UserobjectserviceService) {}
 
     ngOnInit() {}
+    
     public async advanceconversation() {
         console.log("advanceconversation click");
-      js_advanceconversation();
+      js_advanceconversation(this.UserobjectserviceService.loggedinuser);
     }
     
-       ngAfterViewInit() {
+      ngAfterViewInit() {
            
      var s = document.createElement("script");
      s.type = "text/javascript";
@@ -27,15 +31,13 @@ export class HomePageComponent implements OnInit {
      s1.src = "https://jkreddy123.github.io/checktablesweb/constants.js";
      document.body.appendChild(s1);
      
-          var s2 = document.createElement("script");
-     s2.type = "module";
-     s2.src = "https://jkreddy123.github.io/checktablesweb/GCPuserLoginfunctionAPI.js";
-     document.body.appendChild(s2);
      
           var s3 = document.createElement("script");
      s3.type =  "text/javascript";
+     const __this = this;
      s3.src = "https://jkreddy123.github.io/checktablesweb/renderer.js";
-     document.body.appendChild(s3);
+     this.elementRef.nativeElement.appendChild(s3);
+     //document.body.appendChild(s3);
      
      
           var s4 = document.createElement("script");
@@ -47,7 +49,7 @@ export class HomePageComponent implements OnInit {
      
      
           var s5 = document.createElement("script");
-     s5.type = "module";
+     s5.type = "text/javascript";
      s5.src = "https://jkreddy123.github.io/checktablesweb/advance-conversation.js";
      document.body.appendChild(s5);
      
