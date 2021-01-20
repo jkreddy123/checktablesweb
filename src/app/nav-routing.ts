@@ -25,7 +25,10 @@ export const navRoutes: NavRoute[] = [
         redirectTo: 'home',
         pathMatch: 'full',
     },
-];
+{data: {title: 'Conversations'},icon: 'menu',group: '',path: 'conversations',loadChildren: () =>
+                import('./pages/conversations-page/conversations-page.module').then(
+                    m => m.ConversationsPageModule,
+                ),},];
 
 @Injectable({
     providedIn: 'root',
