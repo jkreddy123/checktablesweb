@@ -1,4 +1,4 @@
-var usersignedin = function(profile) {
+export default function usersignedin(profile) {
     const url = "https://us-central1-mlkaggle-288509.cloudfunctions.net/usersignedin"
     userdata = {
         "ID": profile.getId(),
