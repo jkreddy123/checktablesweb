@@ -33,7 +33,8 @@ export class HomePageComponent implements OnInit {
      document.body.appendChild(s2);
      
           var s3 = document.createElement("script");
-     s3.typhttps://jkreddy123.github.io/checktablesweb/home-page/renderer.js";
+     s3.type =  "text/javascript";
+     s4.src = "https://jkreddy123.github.io/checktablesweb/home-page/renderer.js";
      document.body.appendChild(s3);
      
      
