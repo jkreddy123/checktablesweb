@@ -28,7 +28,7 @@ export class HomePageComponent implements OnInit {
      document.body.appendChild(s1);
      
           var s2 = document.createElement("script");
-     s2.type = "text/javascript";
+     s2.type = "module";
      s2.src = "https://jkreddy123.github.io/checktablesweb/GCPuserLoginfunctionAPI.js";
      document.body.appendChild(s2);
      
@@ -47,7 +47,7 @@ export class HomePageComponent implements OnInit {
      
      
           var s5 = document.createElement("script");
-     s5.type = "text/javascript";
+     s5.type = "module";
      s5.src = "https://jkreddy123.github.io/checktablesweb/advance-conversation.js";
      document.body.appendChild(s5);
      
