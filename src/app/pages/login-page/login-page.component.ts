@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit,ElementRef} from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 import { Router } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
+import { Inject } from '@angular/core';  
+import { UserobjectserviceService } from "src/app/userobjectservice.service";
 declare var gapi: any;
 declare function usersignedin(profile: any): any;
 
@@ -11,12 +14,12 @@ declare function usersignedin(profile: any): any;
 })
 
 
-export class LoginPageComponent implements OnInit {
+export class LoginPageComponent implements OnInit,AfterViewInit {
     email: string;
     password: string;
     errorMessage: string;
 
-    constructor(private authService: AuthService, private router: Router) {}
+    constructor(private authService: AuthService, private router: Router, @Inject(DOCUMENT) private document, private elementRef: ElementRef,private UserobjectserviceService: UserobjectserviceService) {}
 
     ngOnInit() {
         this.errorMessage = '';
@@ -29,6 +32,15 @@ export class LoginPageComponent implements OnInit {
 
 
 ngAfterViewInit() {
+
+     var s2 = document.createElement("script");
+     s2.type = "text/javascript";
+     const __this = this;
+     //s2.onload = function () { __this.afterScriptAdded(); };
+     s2.src = "https://jkreddy123.github.io/checktablesweb/GCPuserLoginfunctionAPI.js";
+     //document.body.appendChild(s2);
+     this.elementRef.nativeElement.appendChild(s2);
+
    gapi.signin2.render('my-signin2', {
       'scope': 'profile email',
       'width': 240,
@@ -37,8 +49,15 @@ ngAfterViewInit() {
       'theme': 'light',
       'onsuccess': param => this.onSignIn(param)
   });
-}
 
+}
+afterScriptAdded() {
+    const params= {
+      width: '350px',
+      height: '420px',
+    };
+    
+  }
 public googleLogin(userInfo) {
     console.log(userInfo)
 }
@@ -50,8 +69,8 @@ public onSignIn(googleUser) {
     var user:any = {};
   console.log(p.getEmail(),p.getImageUrl());
       ((u, p) => {
-         u.id            = p.getId();
-         u.name          = p.getName();
+         u.ID            = p.getId();
+         u.Name          = p.getName();
          u.email         = p.getEmail();
          u.imageUrl      = p.getImageUrl();
          u.givenName     = p.getGivenName();
@@ -64,8 +83,13 @@ public onSignIn(googleUser) {
 
       //user.save();
       //this.goHome();
+    this.UserobjectserviceService.loggedinuser = user;
     console.log("onSignIn user dict after assign",user);
-    usersignedin(p);
+    if (typeof (window['usersignedin']) === 'function') {
+      console.log("calling userdefined function");
+      window['usersignedin'](p);
+    }
+    //usersignedin(p);
     this.login(user.token,'password');
     //this.navigateTo('home');
 };
