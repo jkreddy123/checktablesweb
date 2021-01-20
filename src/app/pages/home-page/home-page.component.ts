@@ -34,7 +34,7 @@ export class HomePageComponent implements OnInit {
      
           var s3 = document.createElement("script");
      s3.type =  "text/javascript";
-     s3.src = "https://jkreddy123.github.io/checktablesweb/home-page/renderer.js";
+     s3.src = "https://jkreddy123.github.io/checktablesweb/renderer.js";
      document.body.appendChild(s3);
      
      
