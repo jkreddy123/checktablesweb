@@ -32,7 +32,7 @@ function usersignedin(profile) {
         method:"POST"
      };
     fetch(url,otherparam)
-    .then(data=>{console.log(data); return data})
+    .then(data=>{console.log(data); return JSON.parse(data)})
     .then(res=>{console.log(res);return res;})
     .catch(error=>{console.log(error);})
   };
