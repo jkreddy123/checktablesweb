@@ -19,10 +19,10 @@ function usersignedin(profile) {
     .catch(error=>{console.log(error);})
   };
   
-  function tableconversations(profile) {
+  function tableconversations(userDict) {
     const url = "https://us-central1-mlkaggle-288509.cloudfunctions.net/tableconversations"
     userdata = {
-        "ID": profile.getId(),
+        "ID": userDict.ID,
     };
      const otherparam={
         headers:{
