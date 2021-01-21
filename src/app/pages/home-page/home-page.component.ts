@@ -26,10 +26,6 @@ export class HomePageComponent implements OnInit {
      s.src = "https://jkreddy123.github.io/checktablesweb/jsrsasign-all-min.js";
      document.body.appendChild(s);
      
-          var s1 = document.createElement("script");
-     s1.type = "text/javascript";
-     s1.src = "https://jkreddy123.github.io/checktablesweb/constants.js";
-     document.body.appendChild(s1);
      
      
           var s3 = document.createElement("script");
