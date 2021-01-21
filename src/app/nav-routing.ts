@@ -28,6 +28,9 @@ export const navRoutes: NavRoute[] = [
 {data: {title: 'Conversations'},icon: 'menu',group: '',path: 'conversations',loadChildren: () =>
                 import('./pages/conversations-page/conversations-page.module').then(
                     m => m.ConversationsPageModule,
+                ),},{data: {title: 'Settings'},icon: 'settings',group: '',path: 'settings',loadChildren: () =>
+                import('./pages/settings-page/settings-page.module').then(
+                    m => m.SettingsPageModule,
                 ),},];
 
 @Injectable({
