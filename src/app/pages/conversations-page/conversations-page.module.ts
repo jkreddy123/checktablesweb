@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MatTableModule, MatTableDataSource} from '@angular/material';
 
 import { ConversationsPageRoutingModule } from './conversations-page-routing.module';
 import { ConversationsPageComponent } from './conversations-page.component';
@@ -9,7 +10,9 @@ import { ConversationsPageComponent } from './conversations-page.component';
   declarations: [ConversationsPageComponent],
   imports: [
     CommonModule,
-    ConversationsPageRoutingModule
+    ConversationsPageRoutingModule,
+    MatTableModule, 
+
   ]
 })
 export class ConversationsPageModule { }
