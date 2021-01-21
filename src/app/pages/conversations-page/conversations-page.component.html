@@ -1,1 +1,15 @@
+<mat-table [dataSource]="conversations">
+<ng-container  matColumnDef="Multiplier">
+    <mat-header-cell *matHeaderCellDef>Multiplier</mat-header-cell>
+    <mat-cell *matCellDef="let conversations">{{conversations.multiplier}}</mat-cell>
+</ng-container>    
+<ng-container  matColumnDef="Multiplicand">
+    <mat-header-cell *matHeaderCellDef>Multiplicand</mat-header-cell>
+    <mat-cell *matCellDef="let conversations">{{conversations.multiplicand}}</mat-cell>
+</ng-container>   
+
+    <mat-header-row *matHeaderRowDef="tableColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: tableColumns"></mat-row>
+
+</mat-table>
 <p>conversations-page works!</p>
