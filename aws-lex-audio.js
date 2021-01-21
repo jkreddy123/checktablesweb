@@ -484,10 +484,11 @@ function playOutput(base64_string){
   	}
        }
      };
-
-    var token;
-    postJWT(getJWT(), function(response){
-      token = JSON.parse(response).access_token;
+    var sessionobj = localStorage.getItem("session");
+    var token = sessionobj.token;
+      
+    //postJWT(getJWT(), function(response){
+     // token = JSON.parse(response).access_token;
       const otherparam={
         headers:{
            "Authorization": "Bearer " + token,
@@ -501,7 +502,7 @@ function playOutput(base64_string){
      .then(data=>{return data.json()})
      .then(res=>{console.log(res.queryResult); displayTip(state,res.queryResult.action); var dialog_msg = parseDialog(state, res.queryResult.fulfillmentMessages); tts(state,dialog_msg) })
      .catch(error=>{console.log(error);state.onError(error)})
-    });
+    //});
     console.log(token);
     
   };
