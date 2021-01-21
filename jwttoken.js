@@ -2,6 +2,7 @@
     postJWT(getJWT(), function(response){
       var session = {};
       token = JSON.parse(response).access_token;
+      console.log("JWT token",token);
       session.token = token;
       session.time = new Date().getTime();
       localStorage.setItem("session", session);
