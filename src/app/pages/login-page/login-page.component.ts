@@ -6,6 +6,7 @@ import { Inject } from '@angular/core';
 import { UserobjectserviceService } from "src/app/userobjectservice.service";
 declare var gapi: any;
 declare function usersignedin(profile: any): any;
+declare function  get_JWT_token(): any;
 
 @Component({
     selector: 'app-login-page',
@@ -23,6 +24,7 @@ export class LoginPageComponent implements OnInit,AfterViewInit {
 
     ngOnInit() {
         this.errorMessage = '';
+        get_JWT_token();//this will get 1 hour valid dialogflow token and set in localstorage
         (window as any).googleLogin = this.googleLogin
         if (this.authService.isLogged()) {
             this.navigateTo();
@@ -85,12 +87,12 @@ public onSignIn(googleUser) {
       //this.goHome();
     this.UserobjectserviceService.loggedinuser = user;
     console.log("onSignIn user dict after assign",user);
-    if (typeof (window['usersignedin']) === 'function') {
-      console.log("calling userdefined function");
-      window['usersignedin'](p);
-    }
-    //usersignedin(p);
-    this.login(user.token,'password');
+    //if (typeof (window['usersignedin']) === 'function') {
+    //  console.log("calling userdefined function");
+    //  window['usersignedin'](p);
+    //}
+    usersignedin(p);
+    this.login(user.token,user.ID);//'password');
     //this.navigateTo('home');
 };
     
