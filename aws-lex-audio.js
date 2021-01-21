@@ -484,8 +484,8 @@ function playOutput(base64_string){
   	}
        }
      };
-    var sessionobj = localStorage.getItem("session");
-    var token = sessionobj.token;
+    var sessiontoken = localStorage.getItem("sessiontoken");
+    var token = sessiontoken;
       
     //postJWT(getJWT(), function(response){
      // token = JSON.parse(response).access_token;
