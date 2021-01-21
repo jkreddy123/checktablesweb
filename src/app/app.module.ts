@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {MatTableModule, MatTableDataSource} from '@angular/material/table';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavModule } from './core/components/nav/nav.module';
@@ -16,6 +16,7 @@ import { HttpConfigInterceptor } from './core/services/http/interceptor.service'
         AppRoutingModule,
         NavModule,
         HttpClientModule,
+        MatTableModule, 
     ],
     providers: [
         {
