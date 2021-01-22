@@ -400,11 +400,15 @@
 
   var parsestt = function(state,res) {
     var myarray = res.results;
-    var resultstring
+    var resultstring;
+    if ( myarray == null ){
+       resultstring = "repeat"
+       return resultstring;
+    }
     myarray.forEach((result, index, array)=> {
         var alternatives = result.alternatives;
         alternatives.forEach((alternative, index, array)=>{
-          resultstring = alternative.transcript
+          resultstring = alternative.transcript;
           console.log(resultstring);
           state.onSuccess(resultstring);
         });
