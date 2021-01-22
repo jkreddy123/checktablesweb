@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit,ElementRef} from '@angular/core';
+import { Component, OnInit, AfterViewInit,ElementRef,NgZone} from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 import { Router } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
@@ -20,7 +20,7 @@ export class LoginPageComponent implements OnInit,AfterViewInit {
     password: string;
     errorMessage: string;
 
-    constructor(private authService: AuthService, private router: Router, @Inject(DOCUMENT) private document, private elementRef: ElementRef,private UserobjectserviceService: UserobjectserviceService) {}
+    constructor(private authService: AuthService, private router: Router, @Inject(DOCUMENT) private document, private elementRef: ElementRef,private UserobjectserviceService: UserobjectserviceService,private zone: NgZone) {}
 
     ngOnInit() {
         this.errorMessage = '';
@@ -114,6 +114,6 @@ public onSignIn(googleUser) {
 
     public navigateTo(url?: string) {
         url = url || 'nav';
-        this.router.navigate([url], { replaceUrl: true });
+        this.zone.run(() => this.router.navigate([url], { replaceUrl: true }));
     }
 }
