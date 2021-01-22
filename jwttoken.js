@@ -46,9 +46,9 @@ function getCert() {
 }
 function getJWT() {
 
-    var imported = document.createElement('script');
-    imported.src = 'jsrsasign-all-min.js';
-    document.head.appendChild(imported);
+    //var imported = document.createElement('script');
+    //imported.src = 'jsrsasign-all-min.js';
+    //document.head.appendChild(imported);
 
     var cert = getCert();
     var key = KEYUTIL.getKey(cert.private_key);
