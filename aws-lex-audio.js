@@ -402,7 +402,7 @@
     var myarray = res.results;
     var resultstring;
     if ( myarray == null ){
-       resultstring = "repeat"
+       resultstring = "Sorry, no voice detected";
        return resultstring;
     }
     myarray.forEach((result, index, array)=> {
