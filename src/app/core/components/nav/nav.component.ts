@@ -6,6 +6,7 @@ import {
 import { NavRoute } from '../../../nav-routing';
 import { AuthService } from '../../../auth/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
+declare var gapi: any;
 
 @Component({
     selector: 'app-nav',
@@ -36,6 +37,10 @@ export class NavComponent implements OnInit {
     }
 
     public logout() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+            console.log('User signed out.');
+        });
         this.authService.logout();
         this.router.navigate(['login'], { replaceUrl: true });
     }
