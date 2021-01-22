@@ -21,10 +21,6 @@ export class HomePageComponent implements OnInit {
     
       ngAfterViewInit() {
            
-     var s = document.createElement("script");
-     s.type = "text/javascript";
-     s.src = "https://jkreddy123.github.io/checktablesweb/jsrsasign-all-min.js";
-     document.body.appendChild(s);
      
      
      
