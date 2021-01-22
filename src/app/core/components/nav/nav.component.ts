@@ -31,7 +31,9 @@ export class NavComponent implements OnInit {
     public getNavigationItems(): NavRoute[] {
         return this.navigationService.getNavigationItems();
     }
-
+    public closeSidenav() {
+        this.toggleSideNav();
+    }
     public getActivePage(): Page {
         return this.navigationService.getActivePage();
     }
