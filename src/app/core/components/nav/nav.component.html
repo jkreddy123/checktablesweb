@@ -5,7 +5,7 @@
         </div>
         <mat-nav-list>
             <app-nav-menu-item *ngFor="let navigationItem of getNavigationItems()"
-                               [navigationItem]="navigationItem"></app-nav-menu-item>
+                               [navigationItem]="navigationItem" (click)="closeSidenav()"></app-nav-menu-item>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
