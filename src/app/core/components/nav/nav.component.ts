@@ -42,7 +42,7 @@ export class NavComponent implements OnInit {
     public logout() {
         this.authService.logout();
         var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
+        auth2.signOut().then(() => {
             console.log('User signed out.');
             this.zone.run(() => this.router.navigate(['login'], { replaceUrl: true }));
         });
