@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,NgZone} from '@angular/core';
 import {
     NavigationService,
     Page,
@@ -20,6 +20,7 @@ export class NavComponent implements OnInit {
         private navigationService: NavigationService,
         private authService: AuthService,
         private router: Router,
+        private zone: NgZone
     ) {}
 
     ngOnInit() {}
@@ -43,8 +44,9 @@ export class NavComponent implements OnInit {
         var auth2 = gapi.auth2.getAuthInstance();
         auth2.signOut().then(function () {
             console.log('User signed out.');
+            this.zone.run(() => this.router.navigate(['login'], { replaceUrl: true }));
         });
-        this.router.navigate(['login'], { replaceUrl: true });
+
     }
 
     public getPreviousUrl(): string[] {
