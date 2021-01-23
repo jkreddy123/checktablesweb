@@ -7,28 +7,21 @@
         margin: 0 auto;
         width: 100px;
     }
+    .material-icons.micpic { 
+    	font-size: 108px; 
+    	cursor: pointer;
+    	border-radius: 128px;
+    	box-shadow: 0 0 8px #d8dbe3;
+    	background-color: #fff;
+    }
     
     .white-circle:hover {
         box-shadow: 0 0 8px #007dbc;
     }
     
     
-    .white-circle img {
-        position: relative;
-        top: 18px;
-    }
+ 
 
-    .profilepic {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        margin-top: -100px;
-        margin-left: -50px;
-        text-align: center;
-        border-radius: 50%;
-        overflow: hidden;
-    	perspective: 1px;
-    }
 
     .audio-control {
         position: fixed;
