@@ -86,6 +86,7 @@ public onSignIn(googleUser) {
       //user.save();
       //this.goHome();
     this.UserobjectserviceService.loggedinuser = user;
+    localStorage.setItem("userimageurl", user.imageUrl);
     console.log("onSignIn user dict after assign",user);
     //if (typeof (window['usersignedin']) === 'function') {
     //  console.log("calling userdefined function");
