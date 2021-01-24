@@ -1,0 +1,5 @@
+<div class="container">
+    <mat-toolbar color="primary"><span>Languages</span></mat-toolbar>
+    <p *ngFor="let lang of data" (click)="chooseLanguage(lang.name)">{{lang.name}}<span class="material-icons"
+            *ngIf="lang.name == selectedLang">done</span></p>
+</div>
