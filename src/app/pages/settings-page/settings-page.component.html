@@ -1,1 +1,3 @@
-<p>settings-page works!</p>
+<div class="container">
+    <p *ngFor="let option of options" (click)="chooseLanguage()">{{option}}</p>
+</div>
