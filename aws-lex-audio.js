@@ -527,23 +527,23 @@ function playOutput(base64_string){
   function displayTip(state,action){
     if(action == "input.welcome"){
         var tip = document.getElementById('tip');
-        tip.textContent = 'TIP to say something: ask tables OR ask me tables upto 15';
+        tip.textContent = 'say \"ask 12 table\" OR \"ask tables upto 15\"';
     }
     if(action == "askTables"){
         var tip = document.getElementById('tip');
-        tip.textContent = 'TIP to say something: ok OR yes OR fine';
+        tip.textContent = 'say \"ok\" OR \"yes\" OR \"fine"';
     } 
     if(action == "askMultiplicationAction"){
         var tip = document.getElementById('tip');
-        tip.textContent = 'TIP to say something: 20 OR i dont know OR skip';
+        tip.textContent = 'say \"10\" OR \"i dont know\" OR \"skip\"';
     }   
     if(action == "tryAnswerAgainAction"){
         var tip = document.getElementById('tip');
-        tip.textContent = 'TIP to say something: 20 OR i dont know OR skip';
+        tip.textContent = 'say \"10\" OR \"i dont know\" OR \"skip\"';
     }       
     if(action == "input.unknown"){
         var tip = document.getElementById('tip');
-        tip.textContent = 'TIP to say something: 20 OR i dont know OR skip OR start over';
+        tip.textContent = 'say \"20\" OR \"i dont know\" OR \"skip\" OR \"start over\"';
     }               
   }
 function postJWT(jwt, callback) {
