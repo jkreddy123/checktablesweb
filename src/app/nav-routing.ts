@@ -25,7 +25,7 @@ export const navRoutes: NavRoute[] = [
         redirectTo: 'home',
         pathMatch: 'full',
     },
-{data: {title: 'Conversations'},icon: 'menu',group: '',path: 'conversations',loadChildren: () =>
+{data: {title: 'Conversations'},icon: 'text_snippet',group: '',path: 'conversations',loadChildren: () =>
                 import('./pages/conversations-page/conversations-page.module').then(
                     m => m.ConversationsPageModule,
                 ),},{data: {title: 'Settings'},icon: 'settings',group: '',path: 'settings',loadChildren: () =>
