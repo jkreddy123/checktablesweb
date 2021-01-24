@@ -45,7 +45,7 @@ export class ConversationsPageComponent implements OnInit ,AfterViewInit {
      console.log("user object in conversations page",user);
      
      var userdata = {
-        "ID": localStorage.getItem("userID");//user.ID
+        "ID": localStorage.getItem("userID")//user.ID
     };
      const url = "https://us-central1-mlkaggle-288509.cloudfunctions.net/tableconversations";
      
