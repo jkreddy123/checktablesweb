@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { LanguagesComponent } from '../languages/languages.component';
+import languages from "../../languages"
 
 @Component({
   selector: 'app-settings-page',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsPageComponent implements OnInit {
 
-  constructor() { }
+  options = ["Language Choose"]
+
+  constructor(public matDialog: MatDialog) { }
 
   ngOnInit() {
   }
-
+  chooseLanguage() {
+    this.matDialog.open(LanguagesComponent, {
+      width: "90%",
+      maxWidth: "400px",
+      height: "90%",
+      maxHeight: "700px",
+      data: languages,
+      panelClass: "languages-dialog-container"
+    })
+  }
 }
