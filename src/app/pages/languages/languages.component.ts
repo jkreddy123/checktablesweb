@@ -20,9 +20,10 @@ export class LanguagesComponent implements OnInit {
   chooseLanguage(language) {
     this.storageService.save(StorageKey.LANG, language)
     this.selectedLang = language;
+    localStorage.setItem("englishaccent", language);
     setTimeout(() => {
       this.dialogRef.close()
-    }, 2000)
+    }, 200)
   }
 
 }
