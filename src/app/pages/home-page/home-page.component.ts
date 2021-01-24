@@ -19,9 +19,11 @@ export class HomePageComponent implements OnInit {
       js_advanceconversation(this.UserobjectserviceService.loggedinuser);
     }
     
-      ngAfterViewInit() {
+     ngAfterViewInit() {
            
-     
+     var englishaccent = document.getElementById('englishaccent');
+     englishaccent.textContent = localStorage.getItem("englishaccent");
+  
      
      
           var s3 = document.createElement("script");
