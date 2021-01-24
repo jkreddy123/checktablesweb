@@ -6,3 +6,6 @@ const PRIVATE_KEY = "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAA
 const CLIENT_EMAIL = "55325708385-compute@developer.gserviceaccount.com"
 const CLIENT_ID = "115559574627752335027"
 const CLIENT_X509_CERT_URL = "https://www.googleapis.com/robot/v1/metadata/x509/55325708385-compute%40developer.gserviceaccount.com"
+if (localStorage.getItem("englishaccent") === null) {
+  localStorage.setItem("englishaccent","en-IN");
+}
