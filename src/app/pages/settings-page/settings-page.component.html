@@ -1,3 +1,9 @@
-<div class="container">
-    <p *ngFor="let option of options" (click)="chooseLanguage()">{{option}}</p>
-</div>
+<table class="styled-table">
+        <tbody >
+            <tr  *ngFor="let option of options" (click)="chooseLanguage()">
+                
+                <td>{{option}}</td>
+
+            </tr>
+        </tbody>
+    </table>
