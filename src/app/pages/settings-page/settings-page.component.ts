@@ -10,7 +10,7 @@ import languages from "../../languages"
 })
 export class SettingsPageComponent implements OnInit {
 
-  options = ["Language Choose"]
+  options = ["Choose English Accent"]
 
   constructor(public matDialog: MatDialog) { }
 
