@@ -7,9 +7,11 @@ import { NavModule } from './core/components/nav/nav.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpConfigInterceptor } from './core/services/http/interceptor.service';
+import { MatDialogModule, MatToolbarModule } from '@angular/material';
+import { LanguagesComponent } from './pages/languages/languages.component';
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent, LanguagesComponent],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
@@ -17,6 +19,8 @@ import { HttpConfigInterceptor } from './core/services/http/interceptor.service'
         NavModule,
         HttpClientModule,
         MatTableModule, 
+        MatDialogModule,
+        MatToolbarModule,
     ],
     providers: [
         {
@@ -24,6 +28,9 @@ import { HttpConfigInterceptor } from './core/services/http/interceptor.service'
             useClass: HttpConfigInterceptor,
             multi: true,
         },
+    ],
+    entryComponents: [
+        LanguagesComponent
     ],
     bootstrap: [AppComponent],
 })
