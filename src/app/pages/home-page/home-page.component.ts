@@ -29,14 +29,14 @@ export class HomePageComponent implements OnInit {
           var s3 = document.createElement("script");
      s3.type =  "text/javascript";
      const __this = this;
-     s3.src = "https://jkreddy123.github.io/checktablesweb/renderer.js";
+     s3.src = "https://jkreddy123.github.io/audioweb/renderer.js";
      this.elementRef.nativeElement.appendChild(s3);
      //document.body.appendChild(s3);
      
      
           var s4 = document.createElement("script");
      s4.type = "text/javascript";
-     s4.src = "https://jkreddy123.github.io/checktablesweb/aws-lex-audio.js";
+     s4.src = "https://jkreddy123.github.io/audioweb/aws-lex-audio.js";
      document.body.appendChild(s4);
      
      
@@ -44,7 +44,7 @@ export class HomePageComponent implements OnInit {
      
           var s5 = document.createElement("script");
      s5.type = "text/javascript";
-     s5.src = "https://jkreddy123.github.io/checktablesweb/advance-conversation.js";
+     s5.src = "https://jkreddy123.github.io/audioweb/advance-conversation.js";
      document.body.appendChild(s5);
      
    }
