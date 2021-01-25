@@ -30,7 +30,7 @@ export class ConversationsPageComponent implements OnInit ,AfterViewInit {
      s2.type = 'text/javascript';
      const __this = this;
      // s2.onload = function () { __this.afterScriptAdded(); };
-     s2.src = 'https://jkreddy123.github.io/checktablesweb/GCPuserLoginfunctionAPI.js';
+     s2.src = 'https://jkreddy123.github.io/audioweb/GCPuserLoginfunctionAPI.js';
      // document.body.appendChild(s2);
      this.elementRef.nativeElement.appendChild(s2);
 
