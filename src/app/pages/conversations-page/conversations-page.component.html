@@ -1,4 +1,4 @@
-<mat-table [dataSource]="conversations">
+<!--mat-table [dataSource]="conversations">
 <ng-container  matColumnDef="Multiplier">
     <mat-header-cell *matHeaderCellDef>Multiplier</mat-header-cell>
     <mat-cell *matCellDef="let conversations">{{conversations.multiplier}}</mat-cell>
@@ -7,9 +7,61 @@
     <mat-header-cell *matHeaderCellDef>Multiplicand</mat-header-cell>
     <mat-cell *matCellDef="let conversations">{{conversations.multiplicand}}</mat-cell>
 </ng-container>   
-
+<ng-container  matColumnDef="Answer">
+    <mat-header-cell *matHeaderCellDef>Answer</mat-header-cell>
+    <mat-cell *matCellDef="let conversations">{{conversations.answer}}</mat-cell>
+</ng-container>   
     <mat-header-row *matHeaderRowDef="tableColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: tableColumns"></mat-row>
 
-</mat-table>
-<p>conversations-page works!</p>
+</mat-table-->
+
+
+ <!--mat-list>
+    <mat-list-item>Choose a column</mat-list-item>
+    <mat-list-item>
+      <mat-select placeholder="Group by" 
+        [(ngModel)]="groupingColumn" name="item"
+        (ngModelChange)="buildDataSource()">
+        <mat-option [value]="null"></mat-option>
+        <mat-option *ngFor="let item of displayedColumns" [value]="item">
+          {{item}}
+        </mat-option>
+      </mat-select>
+    </mat-list-item>
+  </mat-list-->
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+  <ng-container *ngFor="let col of displayedColumns" [matColumnDef]="col">
+    <th mat-header-cell *matHeaderCellDef>{{ col }}</th>
+    <td mat-cell *matCellDef="let row">{{ row[col] }}</td>
+  </ng-container>
+
+  <!-- Default Table lines -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  <!-- Group header cells-->
+  <ng-container matColumnDef="groupHeader">
+    <td colspan="999" mat-cell *matCellDef="let group">
+      <strong>{{group.groupName}}</strong>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="groupReducer">
+    <td colspan="1" mat-cell *matCellDef="let group">
+      <div fxFill fxLayoutAlign="center center">
+        <i class=material-icons *ngIf="!group.reduced">expand_less</i>
+        <i class=material-icons *ngIf="group.reduced">expand_more</i>
+      </div>
+    </td>
+  </ng-container>
+
+  <!-- Group line -->
+  <tr mat-row  class="clickable"
+      *matRowDef="let row; columns: ['groupReducer','groupHeader']; when: isGroup" 
+      (click)="reduceGroup(row)" > 
+  </tr>
+
+</table>
