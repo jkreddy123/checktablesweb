@@ -9,6 +9,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpConfigInterceptor } from './core/services/http/interceptor.service';
 import { MatDialogModule, MatToolbarModule } from '@angular/material';
 import { LanguagesComponent } from './pages/languages/languages.component';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
     declarations: [AppComponent, LanguagesComponent],
@@ -21,6 +22,7 @@ import { LanguagesComponent } from './pages/languages/languages.component';
         MatTableModule, 
         MatDialogModule,
         MatToolbarModule,
+        MatListModule,
     ],
     providers: [
         {
