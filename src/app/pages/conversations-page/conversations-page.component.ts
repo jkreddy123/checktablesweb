@@ -103,7 +103,7 @@ export class ConversationsPageComponent implements OnInit ,AfterViewInit {
     this.displayedColumns = this.displayedColumns.filter(item => item !== "datestring");
     this.displayedColumns = this.displayedColumns.filter(item => item !== "result");
     //this.displayedColumns = this.displayedColumns.filter(item => item !== "timestring");
-    this.displayedColumns=["timestring","multiplier", "multiplicand", "answer"];
+    this.displayedColumns=["time","multiplier", "multiplicand", "answer"];
     console.log(this.displayedColumns);
     this.initialData = data;
     return true;
