@@ -1,17 +1,21 @@
+
+
 <div class="login-page" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="50px">
+	<img  class="images" src="./assets/tablesCheck.png"/>
     <div class="logo-container" fxFlexAlign="center">
         <!--app-logo></app-logo-->
        <!--div class="g-signin2" data-onsuccess="onSignIn"></div-->
          <div id="my-signin2"></div>
   </div>
-</div>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-	<div class="bottom-links" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="50px">
+  
+
+	<div class="bottom-links" >
 	<p><a [routerLink]="['../tableslogin',{'paramKey': 1}]">Privacy policy</a>  |  <a [routerLink]="['../tableslogin',{'paramKey': 2}]">Terms & Conditions </a></p>
 	</div>
-  </div>
-</nav>
+
+
+</div>
+
 <router-outlet></router-outlet>
    
     <!--mat-card fxFlexAlign="center">
