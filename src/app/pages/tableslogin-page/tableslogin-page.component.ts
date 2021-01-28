@@ -8,7 +8,7 @@ var privacyURL = 2;
 })
 export class TablesloginPageComponent implements OnInit {
 
-  constructor(private actroute: ActivatedRoute,private router: Router) { 
+  constructor(public actroute: ActivatedRoute,public router: Router) { 
   	this.actroute.params.subscribe(params => {
    		privacyURL = Number.parseInt(params['paramKey']);
    		console.log("privacyURL in privacy url", privacyURL);
