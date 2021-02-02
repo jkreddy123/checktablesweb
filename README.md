@@ -1,7 +1,15 @@
 # MatFortyTwo
 npm install --save-dev @angular-devkit/build-angular
 
-execute above command before ng serve
+execute above command before ng serve --port 4200
+
+ng build --prod
+firebase deploy
+firebase login --reauth
+bubblewrap init --manifest=https://selfytables.6benches.in/manifest.webmanifest
+bubblewrap build
+bubblewrap install
+
 
 The answer to everything (well... almost) that's Angular Material
 
