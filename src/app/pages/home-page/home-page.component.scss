@@ -22,19 +22,25 @@
     .material-icons.langpic,.material-icons.chatpic{
    	    display:inline-flex;
     	vertical-align:middle;
+    	clear:both;
     }
 
  
 
-
     .audio-control {
-        position: fixed;
+
+        cursor: pointer;
+        position: relative;
         top: 50%;
-        left: 50%;
-        margin-top: -50px;
-        margin-left: -50px;
+        left: 0%;
+        margin-top: 50px;
+        margin-left: 0px;
         text-align: center;
+	display:block;
+	clear:both;
     }
+    
+ 
     
     body {
         font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -43,6 +49,7 @@
         font-size: 13px;
         font-weight: 400;
         background-color: #f9fafc;
+
     }
     
     canvas {
@@ -50,8 +57,9 @@
         width: 100vw;
         margin-top: -50px;
         display: block;
-        position: fixed;
+        position: absolute;
         top: 50%;
         left: 0;
         z-index: -1;
+
     }
