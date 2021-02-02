@@ -9,7 +9,7 @@
     }
     .material-icons.micpic { 
     	font-size: 108px; 
-    	cursor: pointer;
+    	cursor: default;
     	border-radius: 128px;
     	box-shadow: 0 0 8px #d8dbe3;
     	background-color: #fff;
@@ -29,17 +29,30 @@
 
     .audio-control {
 
-        cursor: pointer;
+        cursor: default;
         position: relative;
         top: 50%;
         left: 0%;
         margin-top: 50px;
         margin-left: 0px;
         text-align: center;
-	display:block;
-	clear:both;
+	    display:block;
+	    clear:both;
+	    outline-style:none;
+	    -webkit-tap-highlight-color: transparent;
+	    -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
     }
-    
+    .audio-control:focus {
+    	outline: none; /* remove outline */
+   	box-shadow: none; /* remove box shadow */
+    }
  
     
     body {
