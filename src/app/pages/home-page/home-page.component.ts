@@ -3,7 +3,7 @@ import { DOCUMENT } from '@angular/common';
 import { Inject } from '@angular/core'; 
 import { UserobjectserviceService } from "src/app/userobjectservice.service";
 declare function js_advanceconversation(profile: any): any;
-
+declare function stopRecord_click(): any;
 @Component({
     selector: 'app-home-page',
     templateUrl: './home-page.component.html',
@@ -19,6 +19,11 @@ export class HomePageComponent implements OnInit {
       js_advanceconversation(this.UserobjectserviceService.loggedinuser);
     }
     
+    public async stopRecordingMouseup() {
+        console.log("stop recording click");
+      stopRecord_click();
+    }
+    
      ngAfterViewInit() {
            
      var englishaccent = document.getElementById('englishaccent');
@@ -30,8 +35,8 @@ export class HomePageComponent implements OnInit {
      s3.type =  "text/javascript";
      const __this = this;
      s3.src = "https://jkreddy123.github.io/audioweb/renderer.js";
-     this.elementRef.nativeElement.appendChild(s3);
-     //document.body.appendChild(s3);
+     //this.elementRef.nativeElement.appendChild(s3);
+     document.body.appendChild(s3);
      
      
           var s4 = document.createElement("script");
@@ -47,5 +52,10 @@ export class HomePageComponent implements OnInit {
      s5.src = "https://jkreddy123.github.io/audioweb/advance-conversation.js";
      document.body.appendChild(s5);
      
+     try {
+    (window["adsbygoogle"] = window["adsbygoogle"] || []).push({});
+  } catch (e) {
+    console.error(e);
+  }
    }
 }
