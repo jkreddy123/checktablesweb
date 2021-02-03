@@ -4,11 +4,19 @@ npm install --save-dev @angular-devkit/build-angular
 execute above command before ng serve --port 4200
 
 ng build --prod
+
 firebase deploy
+
 firebase login --reauth
+
 npm i -g @bubblewrap/cli
+
+ng add @angular/pwa
+
 bubblewrap init --manifest=https://selfytables.6benches.in/manifest.webmanifest
+
 bubblewrap build
+
 bubblewrap install
 
 
