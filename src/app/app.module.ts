@@ -10,6 +10,8 @@ import { HttpConfigInterceptor } from './core/services/http/interceptor.service'
 import { MatDialogModule, MatToolbarModule } from '@angular/material';
 import { LanguagesComponent } from './pages/languages/languages.component';
 import {MatListModule} from '@angular/material/list';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
     declarations: [AppComponent, LanguagesComponent],
@@ -23,6 +25,7 @@ import {MatListModule} from '@angular/material/list';
         MatDialogModule,
         MatToolbarModule,
         MatListModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: "registerImmediately" }),
     ],
     providers: [
         {
