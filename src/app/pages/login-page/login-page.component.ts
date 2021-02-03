@@ -25,10 +25,10 @@ export class LoginPageComponent implements OnInit,AfterViewInit {
     ngOnInit() {
         this.errorMessage = '';
         get_JWT_token();//this will get 1 hour valid dialogflow token and set in localstorage
-        (window as any).googleLogin = this.googleLogin
-        if (this.authService.isLogged()) {
-            this.navigateTo();
-        }
+        //(window as any).googleLogin = this.googleLogin
+        //if (this.authService.isLogged()) {
+        //    this.navigateTo();
+        //}
     }
     
 
@@ -39,9 +39,9 @@ ngAfterViewInit() {
      s2.type = "text/javascript";
      const __this = this;
      //s2.onload = function () { __this.afterScriptAdded(); };
-     s2.src = "https://jkreddy123.github.io/audioweb/GCPuserLoginfunctionAPI.js";
-     //document.body.appendChild(s2);
-     this.elementRef.nativeElement.appendChild(s2);
+     s2.src = "./assets/js/GCPuserLoginfunctionAPI.js";
+     document.body.appendChild(s2);
+     //this.elementRef.nativeElement.appendChild(s2);
 
    gapi.signin2.render('my-signin2', {
       'scope': 'profile email',
