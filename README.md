@@ -5,6 +5,12 @@ execute above command before ng serve --port 4200
 
 ng build --prod
 
+gedit .well-known/assetlinks.json(copy sha256 key from playstore)
+
+cp -r src/.well-known/ dist/matFortyTwo/
+
+edit firebase.json to rewrite and headers fields to have .well-known/assetlinks.json(having sha256 key) 
+
 firebase deploy
 
 firebase login --reauth
@@ -19,8 +25,8 @@ bubblewrap build
 
 bubblewrap install
 
-Before upload to playstore,
-cp -r src/.well-known/ dist/matFortyTwo/
+
+
 
 The answer to everything (well... almost) that's Angular Material
 
