@@ -19,6 +19,8 @@ bubblewrap build
 
 bubblewrap install
 
+Before upload to playstore,
+cp -r src/.well-known/ dist/matFortyTwo/
 
 The answer to everything (well... almost) that's Angular Material
 
