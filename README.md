@@ -6,6 +6,7 @@ execute above command before ng serve --port 4200
 ng build --prod
 firebase deploy
 firebase login --reauth
+npm i -g @bubblewrap/cli
 bubblewrap init --manifest=https://selfytables.6benches.in/manifest.webmanifest
 bubblewrap build
 bubblewrap install
