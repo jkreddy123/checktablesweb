@@ -4,6 +4,8 @@ import { Inject } from '@angular/core';
 import { UserobjectserviceService } from "src/app/userobjectservice.service";
 declare function js_advanceconversation(profile: any): any;
 declare function stopRecord_click(): any;
+
+
 @Component({
     selector: 'app-home-page',
     templateUrl: './home-page.component.html',
@@ -24,6 +26,8 @@ export class HomePageComponent implements OnInit {
       stopRecord_click();
     }
     
+
+  
      ngAfterViewInit() {
            
      var englishaccent = document.getElementById('englishaccent');
@@ -34,14 +38,14 @@ export class HomePageComponent implements OnInit {
           var s3 = document.createElement("script");
      s3.type =  "text/javascript";
      const __this = this;
-     s3.src = "https://jkreddy123.github.io/audioweb/renderer.js";
+     s3.src = "./assets/js/renderer.js";
      //this.elementRef.nativeElement.appendChild(s3);
      document.body.appendChild(s3);
      
      
           var s4 = document.createElement("script");
      s4.type = "text/javascript";
-     s4.src = "https://jkreddy123.github.io/audioweb/aws-lex-audio.js";
+     s4.src = "./assets/js/aws-lex-audio.js";
      document.body.appendChild(s4);
      
      
@@ -49,13 +53,27 @@ export class HomePageComponent implements OnInit {
      
           var s5 = document.createElement("script");
      s5.type = "text/javascript";
-     s5.src = "https://jkreddy123.github.io/audioweb/advance-conversation.js";
+     s5.src = "./assets/js/advance-conversation.js";
      document.body.appendChild(s5);
      
-     try {
-    (window["adsbygoogle"] = window["adsbygoogle"] || []).push({});
-  } catch (e) {
-    console.error(e);
-  }
+     
+         var s6 = document.createElement('script');
+    	s6.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"; 
+    	s6.setAttribute('data-ad-client', "ca-pub-7518857353098283"); 
+    	s6.defer = true; // make sure that browser will run script after page loaded
+    	document.body.appendChild(s6);
+    	s6.onload = () => {
+     	    		try {
+    				(window["adsbygoogle"] = window["adsbygoogle"] || []).push({});
+  			} catch (e) {
+    				console.error(e);
+  			}
+    	}
+    	
+    	
+ 
    }
+   
+
+  
 }
