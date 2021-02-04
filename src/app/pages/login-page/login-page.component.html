@@ -1,22 +1,24 @@
 
 
-<div class="login-page" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="50px">
-	<!--img  class="images" src="./assets/tablesCheck.png"/-->
-	<i class=material-icons>playlist_add_check</i>
-    <div class="logo-container" fxFlexAlign="center">
-    <p>Selfy Tables</p>
+<div class="login-page" style = "height: 70%;width: 100%;"fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="50px">
+    <!--img  class="images" src="./assets/tablesCheck.png"/-->
+    <i class=material-icons>playlist_add_check</i>
+    <div class="logo-container" style = "height: auto; width: 250px;" fxFlexAlign="center">
+        <p>Selfy Tables</p>
         <!--app-logo></app-logo-->
-       <!--div class="g-signin2" data-onsuccess="onSignIn"></div-->
-         <div id="my-signin2"></div>
-  </div>
-  
-
-	<div class="bottom-links" >
-	<p><a [routerLink]="['../tableslogin',{'paramKey': 1}]">Privacy policy</a>  |  <a [routerLink]="['../tableslogin',{'paramKey': 2}]">Terms & Conditions </a></p>
-	</div>
-
-
+        <!--div class="g-signin2" data-onsuccess="onSignIn"></div-->
+	
+    </div>
 </div>
+<div style="display:block;clear:both" fxLayoutAlign="center" >
+        <div id="my-signin2" style="clear:both" ></div>
+ </div>
+        
+     <div class="bottom-links" >
+	<p><a [routerLink]="['../tableslogin',{'paramKey': 1}]">Privacy policy</a>  |  <a [routerLink]="['../tableslogin',{'paramKey': 2}]">Terms & Conditions </a></p>
+     </div>
+
+
 
 <router-outlet></router-outlet>
    
