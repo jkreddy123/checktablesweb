@@ -5,8 +5,8 @@ import { DOCUMENT } from '@angular/common';
 import { Inject } from '@angular/core';  
 import { UserobjectserviceService } from "src/app/userobjectservice.service";
 declare var gapi: any;
-declare function usersignedin(profile: any): any;
-declare function  get_JWT_token(): any;
+
+var p ;
 
 @Component({
     selector: 'app-login-page',
@@ -24,7 +24,8 @@ export class LoginPageComponent implements OnInit,AfterViewInit {
 
     ngOnInit() {
         this.errorMessage = '';
-        get_JWT_token();//this will get 1 hour valid dialogflow token and set in localstorage
+
+
         //(window as any).googleLogin = this.googleLogin
         //if (this.authService.isLogged()) {
         //    this.navigateTo();
@@ -34,15 +35,18 @@ export class LoginPageComponent implements OnInit,AfterViewInit {
 
 
 ngAfterViewInit() {
+   		var s2 = document.createElement('script');
+   	 	s2.src = "https://apis.google.com/js/api.js"; 
+		s2.defer=true;
+  	  	document.body.appendChild(s2);
+  	  	s2.onload = () => {
 
-     var s2 = document.createElement("script");
-     s2.type = "text/javascript";
-     const __this = this;
-     //s2.onload = function () { __this.afterScriptAdded(); };
-     s2.src = "./assets/js/GCPuserLoginfunctionAPI.js";
-     document.body.appendChild(s2);
-     //this.elementRef.nativeElement.appendChild(s2);
-
+        		var s3 = document.createElement("script");
+    			 s3.type = "text/javascript";
+   			 s3.src = "https://apis.google.com/js/platform.js";
+			 s3.defer=true;
+    			 document.body.appendChild(s3);
+    			 s3.onload = () => {
    gapi.signin2.render('my-signin2', {
       'scope': 'profile email',
       'width': 240,
@@ -50,8 +54,9 @@ ngAfterViewInit() {
       'longtitle': true,
       'theme': 'light',
       'onsuccess': param => this.onSignIn(param)
-  });
-
+  });   			  }
+            	}   	
+ 
 }
 afterScriptAdded() {
     const params= {
@@ -88,13 +93,16 @@ public onSignIn(googleUser) {
     this.UserobjectserviceService.loggedinuser = user;
     localStorage.setItem("userimageurl", user.imageUrl);
     localStorage.setItem("userID", user.ID);
+    localStorage.setItem("Name", user.Name);
+    localStorage.setItem("Email", user.email);
     console.log("onSignIn user dict after assign",user);
     //if (typeof (window['usersignedin']) === 'function') {
     //  console.log("calling userdefined function");
     //  window['usersignedin'](p);
     //}
-    usersignedin(p);
+    //this.loadscripts(p,user);
     this.login(user.token,user.ID);//'password');
+    
     //this.navigateTo('home');
 };
     
