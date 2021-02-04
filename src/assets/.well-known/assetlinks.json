@@ -1,0 +1,5 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target" : { "namespace": "android_app", "package_name": "in.benches.selfytables.twa",
+                   "sha256_cert_fingerprints": ["CC:0D:85:13:F9:9D:99:2E:D6:B7:C0:A8:0F:25:FB:42:17:DA:01:00:2E:6C:D1:1C:5A:73:DB:5E:09:F1:58:36"] }
+    }]
