@@ -10,7 +10,10 @@
     <!--p id="audio-control" class="white-circle" ></p-->
 
         <canvas id="canvasvisualizer" class="visualizer"></canvas>
-        <i class="material-icons micpic" (mousedown)="advanceconversation();" (touchstart)="advanceconversation();" (mouseup)="stopRecordingMouseup();" (touchend)="stopRecordingMouseup();">mic</i>
+        <i class="material-icons micpic" [ngClass]="MicToggle?'micpic':'micpicoff'"
+         (touchstart)="advanceconversation();" (touchend)="stopRecordingMouseup();">mic</i>
+         <!--(mousedown)="advanceconversation();" (mouseup)="stopRecordingMouseup();"-->
+         
     
 
     <p><span id="message"></span></p>
