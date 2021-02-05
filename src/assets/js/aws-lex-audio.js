@@ -359,6 +359,16 @@
     };
   };
 
+var enableMicButton = function() {  
+    var event = new CustomEvent('enableMICButton', {
+        detail: {
+            email: "test email",
+            password: "test paswd"
+        }
+    })
+    window.dispatchEvent(event); 
+  } ;
+  
   var gcsupload = function(state,buffer) {
     var myBlob = new Blob([buffer]);
     var presenttime = new Date().toISOString();
@@ -374,9 +384,12 @@
     fetch(url,otherparam)
     .then(data=>{stt(state,filename); return data.json()})
     .then(res=>{console.log(res)})
-    .catch(error=>console.log(error))
+    .catch(error=>{console.log(error);enableMicButton();})
 
   };
+  
+
+   
   var stt = function(state,filename) {
     const url = 'https://speech.googleapis.com/v1p1beta1/speech:recognize?key='+API_KEY
     const data = {
@@ -400,7 +413,7 @@
     fetch(url,otherparam)
     .then(data=>{return data.json()})
     .then(res=>{console.log(res); var stt_msg = parsestt(state, res); dialog(state,stt_msg,filename);})
-    .catch(error=>{console.log(error);state.onError(error)})
+    .catch(error=>{console.log(error);state.onError(error);enableMicButton();})
   };
 
   var parsestt = function(state,res) {
@@ -445,8 +458,8 @@
      };
     fetch(url,otherparam)
     .then(data=>{return data.json()})
-    .then(res=>{playOutput(res.audioContent); })
-    .catch(error=>{console.log(error);state.onError(error)})
+    .then(res=>{playOutput(res.audioContent); enableMICButton();})
+    .catch(error=>{console.log(error);enableMicButton();})
   };
 
 function playOutput(base64_string){
@@ -517,7 +530,7 @@ function playOutput(base64_string){
                  displayTip(state,res.queryResult.action); 
                  var dialog_msg = parseDialog(state, res.queryResult.fulfillmentMessages);
                  tts(state,dialog_msg) })
-     .catch(error=>{console.log(error);state.onError(error)})
+     .catch(error=>{console.log(error);state.onError(error);enableMicButton();})
     //});
     console.log(token);
     
