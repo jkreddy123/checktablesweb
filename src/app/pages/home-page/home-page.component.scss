@@ -14,6 +14,14 @@
     	box-shadow: 0 0 8px #d8dbe3;
     	background-color: #fff;
     }
+    .material-icons.micpicoff { 
+    	font-size: 108px; 
+    	pointer-events: none;
+    	cursor: not-allowed;
+    	border-radius: 128px;
+    	box-shadow: 0 0 8px #d8dbe3;
+    	background-color: #ffcccb;
+    }
     
     .white-circle:hover {
         box-shadow: 0 0 8px #007dbc;
@@ -29,21 +37,21 @@
 
     .audio-control {
 
-        cursor: default;
+
         position: relative;
         top: 50%;
         left: 0%;
         margin-top: 50px;
         margin-left: 0px;
         text-align: center;
-	    display:block;
-	    clear:both;
-	    outline-style:none;
-	    -webkit-tap-highlight-color: transparent;
-	    -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none; /* Safari */
-        -khtml-user-select: none; /* Konqueror HTML */
-        -moz-user-select: none; /* Old versions of Firefox */
+	display:block;
+	clear:both;
+	outline-style:none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none; /* iOS Safari */
+    	-webkit-user-select: none; /* Safari */
+     	-khtml-user-select: none; /* Konqueror HTML */
+       	-moz-user-select: none; /* Old versions of Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
         user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
