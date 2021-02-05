@@ -1,4 +1,4 @@
-import { Component, OnInit ,AfterViewInit,ElementRef} from '@angular/core';
+import { Component, OnInit ,AfterViewInit,ElementRef,HostListener} from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Inject } from '@angular/core'; 
 import { UserobjectserviceService } from "src/app/userobjectservice.service";
@@ -8,6 +8,7 @@ declare function usersignedin(): any;
 declare function  get_JWT_token(): any;
 declare function  loadscripts(): void;
 //declare function  loadscripts(profile: object | null, user:object|null): void;
+//var MicToggle:boolean;
 
 @Component({
     selector: 'app-home-page',
@@ -16,19 +17,30 @@ declare function  loadscripts(): void;
 })
 export class HomePageComponent implements OnInit {
     constructor(@Inject(DOCUMENT) private document, private elementRef: ElementRef,private UserobjectserviceService: UserobjectserviceService) {}
+     MicToggle:boolean = true;
 
     ngOnInit() {    
+         
     	this.loadscripts();
     }
     
+    @HostListener('window:enableMICButton', ['$event.detail'])
+    enableMICButton(detail) {
+    	console.log('in angular function mic enabled enableMICButton', detail);
+    	this.MicToggle = true;//!this.toggle;
+    }
+
+    
     public async advanceconversation() {
         console.log("advanceconversation click");
+        
       js_advanceconversation(this.UserobjectserviceService.loggedinuser);
     }
     
     public async stopRecordingMouseup() {
         console.log("stop recording click");
       stopRecord_click();
+      this.MicToggle = false;//!this.toggle;
     }
     
    public loadscripts(){
