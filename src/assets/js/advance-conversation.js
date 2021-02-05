@@ -2,7 +2,7 @@
     var message = document.getElementById('message');
     var config, conversation;
     var userdata;
-    message.textContent = 'Passive';
+    message.textContent = 'Tap & Hold to speak';
 
     function js_advanceconversation(userdata) {
     console.log("inside advance conversation js");
